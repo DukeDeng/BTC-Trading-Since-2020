@@ -1,0 +1,27 @@
+{
+  "_comment": "复制本文件为 btc_plan_config.json 并填入你自己的数字。真实配置已被 .gitignore, 不会进公开仓库。",
+
+  "dry_powder_usd": 100000,
+  "current_btc": 0.0,
+  "core_btc": 0.0,
+  "cycle_high": 122387,
+
+  "_buy_ladder_note": "越深越大 (back-weighted)。pct 之和需=1.0。price=触发档位价。默认刻度: 中性, 既不押浅底也不押深熊。",
+  "buy_ladder": [
+    {"price": 74000, "pct": 0.15},
+    {"price": 64000, "pct": 0.20},
+    {"price": 56000, "pct": 0.25},
+    {"price": 48000, "pct": 0.22},
+    {"price": 40000, "pct": 0.18}
+  ],
+
+  "_trim_ladder_note": "按账本里 '价格越高净多比例越低' 校准。trim_pct_of_tactical = 该档减掉剩余战术仓的比例。",
+  "trim_ladder": [
+    {"price": 95000,  "trim_pct_of_tactical": 0.33},
+    {"price": 107000, "trim_pct_of_tactical": 0.25},
+    {"price": 120000, "trim_pct_of_tactical": 1.00}
+  ],
+
+  "_executed_note": "每执行一档就记一笔, 脚本会算已得BTC/均价/剩余弹药。例: {\"price\": 73722, \"usd\": 15000}",
+  "executed_buys": []
+}
